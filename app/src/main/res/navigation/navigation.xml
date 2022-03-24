@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_splash">
+    <fragment
+        android:id="@+id/fragment_splash"
+        android:name="com.murata.foodrecipeapp.ui.fragment.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_fragment_splash_to_fragment_search_recipe"
+            app:destination="@id/fragment_search_recipe" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_search_recipe"
+        android:name="com.murata.foodrecipeapp.ui.fragment.SearchRecipeFragment"
+        tools:layout="@layout/fragment_search_recipe">
+        <action
+            android:id="@+id/action_fragment_search_recipe_to_fragment_recipe_detail"
+            app:destination="@id/fragment_recipe_detail" />
+        <argument
+            android:name="arrayListDtoTag"
+            app:nullable="true"
+            app:argType="com.murata.foodrecipeapp.network.dto.DtoTag[]"
+             />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_recipe_detail"
+        android:name="com.murata.foodrecipeapp.ui.fragment.RecipeDetailFragment"
+        tools:layout="@layout/fragment_recipe_detail">
+        <action
+            android:id="@+id/action_fragment_recipe_detail_self"
+            app:destination="@id/fragment_recipe_detail" />
+        <argument
+            android:name="selectedRecipe"
+            app:argType="com.murata.foodrecipeapp.network.dto.DtoRecipe" />
+
+    </fragment>
+</navigation>

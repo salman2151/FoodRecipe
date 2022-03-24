@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="dtoRecipe"
+            type="com.murata.foodrecipeapp.network.dto.DtoRecipe" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imvThumbnail"
+                android:layout_width="106dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/no_image_available"
+                android:visibility="visible"
+                app:progressbar="@{pbImageThumbnailLoader}"
+                app:imageUrl="@{dtoRecipe.thumbnail_url}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UnusedAttribute"
+                tools:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/pbImageThumbnailLoader"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/imvThumbnail"
+                app:layout_constraintEnd_toEndOf="@+id/imvThumbnail"
+                app:layout_constraintStart_toStartOf="@+id/imvThumbnail"
+                app:layout_constraintTop_toTopOf="@+id/imvThumbnail"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@{dtoRecipe.name}"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imvThumbnail"
+                app:layout_constraintTop_toBottomOf="@+id/imvThumbnail"
+                tools:text="Recipe Name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

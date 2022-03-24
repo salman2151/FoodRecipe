@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Food Recipe App</string>
+    <string name="search">Search</string>
+    <string name="no_data_found">No data found!</string>
+    <string name="search_tag">Search tag</string>
+    <string name="similar_recipe_s">Similar Recipe\'s</string>
+    <string name="play_video">Play Video</string>
+    <string name="food_recipe_app">Food Recipe App</string>
+</resources>
